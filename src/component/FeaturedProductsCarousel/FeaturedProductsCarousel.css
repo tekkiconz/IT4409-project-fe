@@ -1,0 +1,22 @@
+.FeaturedProductsCarousel {
+  border: 1px solid red;
+  height: 320px;
+  box-sizing: border-box;
+  padding: 40px 20%;
+  display: flex;
+}
+
+.carousel {
+  color: #000;
+  margin: auto;
+  margin-left: 16px;
+  margin-right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 960px) {
+  .FeaturedProductsCarousel {
+    padding: 40px 5%;
+  }
+}
