@@ -1,0 +1,57 @@
+.PostProduct {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.post-product-container {
+  max-width: 1024px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.post-product-form {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-product-form-label {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-product-form-text-input {
+  height: 2.5rem;
+  font-size: 1.5rem;
+  outline: none;
+  margin: 0 1rem 0 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-product-form-textarea {
+  height: 10rem;
+  font-size: 1.2rem;
+  margin: 0 1rem 0 1rem;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1.5rem;
+  resize: none;
+}
+
+.post-product-form-select {
+  height: 2.2rem;
+  margin: 0 1rem 0 1rem;
+  outline: none;
+  padding: 0.2rem;
+  font-size: 1.2rem;
+}
+
+.post-product-form-file {
+  margin: 0 1rem 0 1rem;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
