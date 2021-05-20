@@ -12,9 +12,20 @@ class NavBar extends Component {
   }
 
   render() {
+    const { setShowModal } = this.props;
+
+    const handleOnClick = e => {
+      setShowModal(prev => !prev);
+    }
+
     return (
       <nav className="NavbarItems">
-        <h1 className="navbar-logo">PdfShare<i className="fas fa-book"></i></h1>
+        <Link className="navbar-logo" to='/'>
+          <h1 >
+            PdfShare
+            <i className="fas fa-book"></i>
+          </h1>
+        </Link>
         <div className="menu-icon" onClick={this.handleClick}>
           <i className={this.state.clicked ? 'fas fa-times' : "fas fa-bars"}></i>
         </div>
@@ -28,7 +39,7 @@ class NavBar extends Component {
               </li>);
           })}
         </ul>
-        <Button>Sign up</Button>
+        <Button onClick={handleOnClick}>Sign up</Button>
       </nav>
     )
   }
