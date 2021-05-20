@@ -1,0 +1,20 @@
+.home-item {
+  height: 320px;
+  width: 200px;
+  margin: 20px;
+  border-radius: 9px;
+}
+
+.home-item-image {
+  height: 260px;
+  border-radius: 8px 8px 0 0;
+}
+
+.home-item-title {
+  margin: 5px;
+  font-size: 1.2rem;
+}
+
+.home-item-like {
+  padding: 3px;
+}
