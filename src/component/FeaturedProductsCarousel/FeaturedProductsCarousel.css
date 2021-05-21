@@ -1,8 +1,8 @@
 .FeaturedProductsCarousel {
   border: 1px solid red;
-  height: 320px;
+  height: 280px;
   box-sizing: border-box;
-  padding: 40px 20%;
+  padding: 20px 20%;
   display: flex;
 }
 

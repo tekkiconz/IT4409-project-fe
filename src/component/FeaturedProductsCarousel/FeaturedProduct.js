@@ -9,7 +9,7 @@ export default class FeaturedProduct extends Component {
           <div className="featured-product-image test">
           </div>
           <div className="featured-product-information test">
-            <div className='featured-product-display-block '>
+            <div className='featured-product-display-block test'>
               <div className="featured-product-title test">
                 Title
               </div>

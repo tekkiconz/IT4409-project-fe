@@ -5,16 +5,31 @@ import { Link } from '../../Route/Route'
 import './NavBar.css';
 
 class NavBar extends Component {
-  state = { clicked: false };
+  constructor(props) {
+    super(props);
+    this.state = { clicked: false };
+    this.handleClick = this.handleClick.bind(this);
+  }
 
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked })
   }
 
   render() {
+    const { setShowModal } = this.props;
+
+    const handleOnClick = e => {
+      setShowModal(prev => !prev);
+    }
+
     return (
       <nav className="NavbarItems">
-        <h1 className="navbar-logo">PdfShare<i className="fas fa-book"></i></h1>
+        <Link className="navbar-logo" to='/'>
+          <h1 >
+            PdfShare
+            <i className="fas fa-book"></i>
+          </h1>
+        </Link>
         <div className="menu-icon" onClick={this.handleClick}>
           <i className={this.state.clicked ? 'fas fa-times' : "fas fa-bars"}></i>
         </div>
@@ -28,7 +43,7 @@ class NavBar extends Component {
               </li>);
           })}
         </ul>
-        <Button>Sign up</Button>
+        <Button onClick={handleOnClick}>Sign up</Button>
       </nav>
     )
   }

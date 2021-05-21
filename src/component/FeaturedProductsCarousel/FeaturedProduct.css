@@ -18,13 +18,13 @@
   height: 100%;
   border-radius: 7px 0 0 7px;
   box-sizing: border-box;
-  width: 320px;
+  min-width: 20%;
 }
 
 .featured-product-information {
   border-radius: 0 7px 7px 0;
-  flex-grow: 100;
   display: flex;
+  flex: 1;
   flex-direction: column;
   box-sizing: border-box;
   padding: 5px;
@@ -32,14 +32,18 @@
 
 .featured-product-display-block {
   display: flex;
+  min-width: 0;
 }
 
 .featured-product-title {
   font-size: 2rem;
-  flex-grow: 100;
+  flex: 1;
   margin-left: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .featured-product-rating {
