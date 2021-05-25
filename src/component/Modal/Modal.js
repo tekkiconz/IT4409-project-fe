@@ -34,7 +34,7 @@ export default class Modal extends Component {
               <img src='https://picsum.photos/id/1068/400/500' alt='hi :>' className='modal-img'></img>
               <div className='modal-content'>
                 <i className='fas fa-times modal-exit-icon' onClick={handleOnclick}></i>
-                {this.state.isAccount ? <SignIn /> : <SignUp />}
+                {this.state.isAccount ? <SignIn handleOnclick={handleOnclick} /> : <SignUp handleOnclick={handleOnclick} />}
                 <br />
                 <div
                   className="modal-account-state"

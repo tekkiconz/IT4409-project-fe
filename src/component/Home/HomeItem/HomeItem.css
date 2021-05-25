@@ -1,13 +1,22 @@
 .home-item {
-  height: 320px;
+  height: 336px;
   width: 200px;
   margin: 20px;
   border-radius: 9px;
+  cursor: pointer;
+  box-shadow: rgb(0 0 0 / 15%) 0px 0px 3px 3px;
+}
+
+.home-item:hover {
+  box-shadow: rgb(0 0 0 / 15%) 0px 0px 5px 5px;
+  transition: 0.5s;
 }
 
 .home-item-image {
-  height: 260px;
-  border-radius: 8px 8px 0 0;
+  min-height: 260px;
+  border-radius: 9px 9px 0 0;
+  width: 200px;
+  object-fit: cover;
 }
 
 .home-item-title {
@@ -17,4 +26,10 @@
 
 .home-item-like {
   padding: 3px;
+  text-align: right;
+  margin-right: 0.5rem;
+}
+
+.home-item-icon {
+  margin-left: 3px;
 }

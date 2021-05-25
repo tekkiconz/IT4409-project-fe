@@ -7,12 +7,67 @@ import './NavBar.css';
 class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { clicked: false };
-    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      clicked: false,
+      isSignedIn: false,
+      username: '',
+      email: ''
+    };
+    this.handleClick = this.handleClick.bind(this)
+    this.getCurrentUser = this.getCurrentUser.bind(this)
+    this.handleSignout = this.handleSignout.bind(this)
+  }
+
+  handleSignout = () => {
+    fetch('http://localhost:8888/api/users/signout', {
+      method: 'GET',
+      credentials: 'include'
+    }).then(response => {
+      if (!response.ok)
+        throw new Error(response.statusText)
+      return response.json()
+    }).then(data => {
+      this.setState({
+        isSignedIn: false,
+        username: '',
+        email: ''
+      })
+      console.log(data);
+    }).catch(err => {
+      alert("Some thing went wrong");
+    })
+
   }
 
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked })
+  }
+
+  getCurrentUser = () => {
+    const options = {
+      method: 'GET',
+      credentials: 'include'
+    }
+    fetch('http://localhost:8888/api/users/currentuser', options)
+      .then(result => result.json())
+      .then(data => {
+        if (data.username)
+          this.setState({
+            isSignedIn: true,
+            username: data.username,
+            email: data.email
+          })
+        console.log(this.state)
+      })
+      .catch(err => console.log(err))
+  }
+
+  componentDidMount() {
+    this.getCurrentUser()
+  }
+
+  componentWillUnmount() {
+    // clearInterval(this.timerID)
   }
 
   render() {
@@ -42,8 +97,28 @@ class NavBar extends Component {
                 </Link>
               </li>);
           })}
+          {this.state.isSignedIn ?
+            <button
+              className="nav-link-mobile"
+              onClick={() => {
+                this.handleClick()
+                this.handleSignout()
+              }}
+            >Sign out</button>
+            : <button
+              className="nav-link-mobile"
+              onClick={() => {
+                this.handleClick()
+                handleOnClick()
+              }}>
+              Sign up
+              </button>
+          }
         </ul>
-        <Button onClick={handleOnClick}>Sign up</Button>
+        <Button
+          onClick={this.state.isSignedIn ? this.handleSignout : handleOnClick}>
+          {this.state.isSignedIn ? "Sign out" : "Sign in"}
+        </Button>
       </nav>
     )
   }

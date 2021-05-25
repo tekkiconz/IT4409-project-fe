@@ -22,8 +22,9 @@
   flex-grow: 100;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: flex-start;
+  padding-right: 3rem;
   padding-top: 20px;
   padding-bottom: 20px;
 }

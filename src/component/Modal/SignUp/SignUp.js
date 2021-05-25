@@ -9,7 +9,9 @@ export default class SignUp extends Component {
     this.state = {
       username: "",
       email: "",
-      password: ""
+      password: "",
+      hasError: false,
+
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
@@ -50,7 +52,20 @@ export default class SignUp extends Component {
       body: formBody
     }
     fetch('http://localhost:8888/api/users/signup', options)
-      .then(result => result.json())
+      .then(result => {
+        if (!result.ok)
+          throw Error(result)
+        return result.json()
+      })
+      .then(data => {
+        console.log(data)
+        this.props.handleOnclick()
+      })
+      .catch(err => {
+        this.setState({
+          hasError: true,
+        })
+      });
   }
 
   render() {

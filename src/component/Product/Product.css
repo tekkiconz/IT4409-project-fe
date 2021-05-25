@@ -40,6 +40,16 @@
 
 .product-description {
   height: 300px;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.product-description-like-btn {
+  margin: auto;
+}
+
+.product-description-like-btn-icon {
+  margin-right: 0.5rem;
 }
 
 .product-comment-container {
@@ -49,9 +59,15 @@
 }
 
 .product-comment-post {
-  height: 100px;
+  height: fit-content;
   padding: 12px;
   margin-bottom: 6px;
+}
+
+.product-comment-post-textarea {
+  width: 100%;
+  height: 60px;
+  padding: 0.5rem;
 }
 
 .product-comment {
