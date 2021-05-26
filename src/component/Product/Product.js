@@ -56,11 +56,16 @@ export default class Body extends Component {
         if (!response.ok)
           throw new Error(response.statusText)
         return response.json()
-      }).then(data =>
+      }).then(data => {
+        console.log(data)
         this.setState({
           product: data[0]
         })
-      )
+      }).catch(err => {
+        alert("404 not found")
+        window.location.href = "http://localhost:3000"
+      })
+
   }
 
   onCommentChange = (event) => {
@@ -75,10 +80,6 @@ export default class Body extends Component {
       currCommentPage: prev.currCommentPage + 1,
     }))
     this.getComment()
-  }
-
-  onPostLike = (event) => {
-    const url = `http://localhost:8888/api/books/${this.state.product._id}/likes`
   }
 
   onPostComment = (event) => {
@@ -103,7 +104,7 @@ export default class Body extends Component {
         })
         this.getComment()
       }).catch(err => {
-        console.log(err)
+        alert("Sign in first!")
       })
   }
 
@@ -113,6 +114,8 @@ export default class Body extends Component {
   }
 
   render() {
+    if (!this.state.product)
+      return null;
     return (
       <>{
         this.state.product._id ? <div className="Product">

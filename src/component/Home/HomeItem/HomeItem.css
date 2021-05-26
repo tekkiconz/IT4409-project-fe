@@ -10,6 +10,7 @@
 .home-item:hover {
   box-shadow: rgb(0 0 0 / 15%) 0px 0px 5px 5px;
   transition: 0.5s;
+  transform: scale(1.04);
 }
 
 .home-item-image {

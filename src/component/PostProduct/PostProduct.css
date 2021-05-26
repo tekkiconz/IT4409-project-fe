@@ -8,6 +8,7 @@
   background: #fff;
   border-radius: 10px;
   padding: 1rem 2rem 1rem 2rem;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
 .post-product-form {
@@ -54,4 +55,14 @@
   margin: 0 1rem 0 1rem;
   font-size: 1rem;
   padding-bottom: 1rem;
+}
+
+.post-error {
+  color: red;
+  font-size: 1rem;
+  background-color: #ffe6e6;
+  border-radius: 5px;
+  border: 1px solid red;
+  padding: 1rem;
+  margin: 0.5rem;
 }

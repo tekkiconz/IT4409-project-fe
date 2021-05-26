@@ -32,7 +32,6 @@ class NavBar extends Component {
         username: '',
         email: ''
       })
-      console.log(data);
     }).catch(err => {
       alert("Some thing went wrong");
     })
@@ -57,7 +56,6 @@ class NavBar extends Component {
             username: data.username,
             email: data.email
           })
-        console.log(this.state)
       })
       .catch(err => console.log(err))
   }
@@ -118,6 +116,7 @@ class NavBar extends Component {
           }
         </ul>
         <Button
+          className="nav-btn"
           onClick={this.state.isSignedIn ? this.handleSignout : handleOnClick}>
           {this.state.isSignedIn ? "Sign out" : "Sign in"}
         </Button>

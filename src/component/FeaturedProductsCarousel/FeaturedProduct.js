@@ -12,7 +12,6 @@ export default class FeaturedProduct extends Component {
   }
 
   getUser = () => {
-    console.log(this.state.userId)
     const url = new URL('http://localhost:8888/api/users/info')
     url.search = new URLSearchParams({ id: this.product.userid }).toString()
 
@@ -28,7 +27,7 @@ export default class FeaturedProduct extends Component {
           username: data.username
         })
       ).catch(err =>
-        console.log(err)
+        alert("Somthing went wrong, reload recommended")
       )
   }
 

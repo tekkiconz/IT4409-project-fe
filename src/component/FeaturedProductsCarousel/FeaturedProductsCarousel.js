@@ -28,7 +28,8 @@ export default class FeaturedProductsCarousel extends Component {
           length: data.length,
           products: data
         })
-      }).catch(err => console.log(err))
+      }).catch(err =>
+        alert("Something went wrong"))
   }
 
   nextProduct = () => {

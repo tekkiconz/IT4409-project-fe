@@ -9,7 +9,8 @@ export default class SignIn extends Component {
 
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      hasError: false
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -44,13 +45,21 @@ export default class SignIn extends Component {
       body: formBody
     }
     fetch("http://localhost:8888/api/users/login", options)
-      .then(result => result.json())
+      .then(result => {
+        console.log(result)
+        return result.json()
+      })
       .then(data => {
-        if (data.status === 'logged in')
+        if (data.status === 'logged in') {
           this.props.handleOnclick()
+        }
       })
       .catch(err => {
-        console.log(err);
+        this.setState({
+          email: '',
+          password: '',
+          hasError: true,
+        })
       })
 
   }
@@ -72,6 +81,7 @@ export default class SignIn extends Component {
             value={this.state.password}
             onChange={this.handlePasswordChange}
           ></input><br />
+          {this.state.hasError && (<><div className="modal-error">Something went wrong, check your credentials</div></>)}
           <Button type="submit"> Sign In </Button>
         </form>
       </div>

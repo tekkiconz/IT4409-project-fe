@@ -11,7 +11,6 @@ export default class SignUp extends Component {
       email: "",
       password: "",
       hasError: false,
-
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
@@ -58,7 +57,12 @@ export default class SignUp extends Component {
         return result.json()
       })
       .then(data => {
-        console.log(data)
+        this.setState({
+          username: '',
+          email: '',
+          password: '',
+          hasError: false
+        })
         this.props.handleOnclick()
       })
       .catch(err => {
@@ -99,6 +103,7 @@ export default class SignUp extends Component {
               value={this.state.password}
               onChange={this.handlePasswordChange}
             ></input><br />
+            {this.state.hasError && (<><div className="modal-error">Something went wrong, check your credentials</div></>)}
             <Button type="submit">Sign up</Button>
           </form>
         </div>

@@ -8,6 +8,8 @@ import FeaturedProductsCarousel from './component/FeaturedProductsCarousel/Featu
 import SearchBar from './component/SearchBar/SearchBar'
 import PostProduct from './component/PostProduct/PostProduct';
 import Modal from './component/Modal/Modal';
+import UserHistory from './component/UserHistory/UserHistory'
+import Contacts from './component/Contacts/Contacts';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -19,8 +21,10 @@ function App() {
       <FeaturedProductsCarousel />
       <SearchBar />
       <Route exact path='/' component={Home} />
-      <Route path='/product' component={Product} />
+      <Route exact path='/product' component={Product} />
       <Route exact path='/post' component={PostProduct} />
+      <Route exact path='/history' component={UserHistory} />
+      <Route exact contact='/contact' component={Contacts} />
     </div>
   );
 }

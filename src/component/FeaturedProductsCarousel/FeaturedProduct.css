@@ -4,6 +4,12 @@
   padding: 10px;
   z-index: -1;
   cursor: pointer;
+  transition: 1s ease;
+}
+
+.FeaturedProduct:hover {
+  transform: scale(1.03);
+  transition: 1s ease;
 }
 
 .featured-product-container {
@@ -76,4 +82,24 @@
   text-align: right;
   margin: 5px;
   margin-right: 1rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .FeaturedProduct {
+    width: 500px;
+  }
+  .featured-product-image {
+    visibility: hidden;
+    position: fixed;
+  }
+  .featured-product-information {
+    border-radius: 8px;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .FeaturedProduct {
+    width: 300px;
+  }
 }

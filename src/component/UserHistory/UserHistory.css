@@ -1,0 +1,20 @@
+.UserHistory {
+  padding: 30px 0 30px 0;
+}
+
+.user-history-container {
+  max-width: 1024px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 2rem 1rem 2rem;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.user-history-title {
+  padding: 1rem;
+}
+
+.user-history-list {
+  margin: 1rem 3rem 1rem 3rem;
+}

@@ -12,7 +12,7 @@
   position: absolute;
   top: 50%;
   left: 256px;
-  z-index: 0;
+  z-index: 1;
   color: #000;
   margin: auto;
   margin-left: 16px;
@@ -31,7 +31,7 @@
   margin-right: 16px;
   font-size: 32px;
   cursor: pointer;
-  z-index: 0;
+  z-index: 1;
 }
 
 .slide {
@@ -45,4 +45,13 @@
   z-index: 0;
   transition-duration: 1s;
   transform: scale(1.08);
+}
+
+@media screen and (max-width: 1600px) {
+  .carousel-left {
+    left: 1rem;
+  }
+  .carousel-right {
+    right: 1rem;
+  }
 }

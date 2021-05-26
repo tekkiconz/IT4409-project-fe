@@ -1,5 +1,19 @@
 .Filter {
-  height: 100%;
-  min-width: 300px;
-  min-height: 700px;
+  min-height: 3rem;
+  display: flex;
+  padding: 1rem;
+  border-radius: 20px 20px 0 0;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f0f4fa;
+}
+
+.filter-option {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-option-label {
+  margin: 0.5rem;
 }

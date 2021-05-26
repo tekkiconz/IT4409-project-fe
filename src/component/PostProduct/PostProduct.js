@@ -58,7 +58,6 @@ export default class PostProduct extends Component {
         this.setState({
           hasError: true,
         })
-        console.log(err)
       })
   }
 
@@ -101,8 +100,8 @@ export default class PostProduct extends Component {
 
   render() {
     return (
-      <div className="PostProduct test">
-        <div className="post-product-container test">
+      <div className="PostProduct">
+        <div className="post-product-container">
           <form
             className="post-product-form"
             id="post-product-form"
@@ -131,7 +130,7 @@ export default class PostProduct extends Component {
               className="post-product-form-select"
               onChange={this.onProductCategoryChange}
             >
-              {catergories.map(catergory => <option value={catergory.name}>{catergory.name}</option>)}
+              {catergories.map(catergory => <option value={catergory.name} key={catergory.name}>{catergory.name}</option>)}
             </select>
             <label
               className="post-product-form-label"
@@ -149,6 +148,7 @@ export default class PostProduct extends Component {
               className="post-product-form-file"
               onChange={this.onProductJpegCoverFileChange}
             ></input>
+            {this.state.hasError && (<><div className="post-error">Something went wrong, check your information</div></>)}
             <Button className="btn-large" type="submit">Submit</Button>
           </form>
         </div>

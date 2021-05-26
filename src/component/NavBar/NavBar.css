@@ -47,7 +47,7 @@
 .nav-links:hover {
   background-color: #a7deed;
   border-radius: 4px;
-  transition: all 0.2s ease-out;
+  transition: 0.2s ease-out;
 }
 
 .fa-bars {
@@ -71,7 +71,7 @@
   display: none;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1130px) {
   .NavbarItems {
     position: relative;
   }
@@ -89,7 +89,7 @@
     height: 550px;
     position: absolute;
     top: 80px;
-    left: -1000px;
+    left: -1300px;
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
@@ -163,7 +163,7 @@
     transition: 250ms;
   }
 
-  Button {
+  .nav-btn {
     display: none;
   }
 }

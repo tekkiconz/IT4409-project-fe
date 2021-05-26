@@ -16,6 +16,7 @@
   background: #fff;
   color: #6568f4;
   transition: 250ms;
+  transform: scale(1.04);
 }
 
 .btn-primary {

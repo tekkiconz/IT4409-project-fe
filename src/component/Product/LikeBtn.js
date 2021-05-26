@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from '../Button'
+import './Product.css'
 
 export default class LikeBtn extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ export default class LikeBtn extends Component {
         this.getProductLikeCounts()
       }
       ).catch(err =>
-        console.log(err)
+        alert("Sign in first!")
       )
   }
 
@@ -70,7 +71,9 @@ export default class LikeBtn extends Component {
         this.setState({
           likesCount: data[0].likesCount
         })
-      )
+      ).catch(err => {
+        alert('Something went wrong. Wait and reload later')
+      })
     console.log(this.state.likesCount)
   }
 
@@ -82,11 +85,11 @@ export default class LikeBtn extends Component {
   render() {
     return (
       <Button
-        className='product-description-like-btn'
+        className='product-like-btn'
         buttonStyle={this.state.likeStatus ? 'btn-outline' : 'btn-primary'}
         onClick={this.onPostLike}
       >
-        <i className="fas fa-thumbs-up product-description-like-btn-icon" />
+        <i className="fas fa-thumbs-up product-like-btn-icon" />
         {this.state.likesCount}
       </Button>
     )
