@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from '../Button';
 import Comment from './Comment/Comment';
+import LikeBtn from './LikeBtn';
 import './Product.css';
 
 export default class Body extends Component {
@@ -10,7 +11,8 @@ export default class Body extends Component {
       product: {},
       comments: [],
       currComment: '',
-      currCommentPage: 1
+      currCommentPage: 1,
+      likeStatus: false
     }
 
     this.onCommentChange = this.onCommentChange.bind(this)
@@ -75,6 +77,10 @@ export default class Body extends Component {
     this.getComment()
   }
 
+  onPostLike = (event) => {
+    const url = `http://localhost:8888/api/books/${this.state.product._id}/likes`
+  }
+
   onPostComment = (event) => {
     const url = `http://localhost:8888/api/books/${this.state.product._id}/comments`
     const body = new FormData()
@@ -123,7 +129,7 @@ export default class Body extends Component {
                 <div className='product-description'>
                   {this.state.product.description}
                 </div>
-                <Button className='product-description-like-btn'><i className="fas fa-thumbs-up product-description-like-btn-icon" />{this.state.product.likesCount}</Button>
+                <LikeBtn productId={this.state.product._id} />
               </div>
             </div>
             <div className='product-comment-container '>

@@ -63,11 +63,13 @@ class NavBar extends Component {
   }
 
   componentDidMount() {
-    this.getCurrentUser()
+    this.timerID = setInterval(() => {
+      this.getCurrentUser()
+    }, 10000);
   }
 
   componentWillUnmount() {
-    // clearInterval(this.timerID)
+    clearInterval(this.timerID)
   }
 
   render() {

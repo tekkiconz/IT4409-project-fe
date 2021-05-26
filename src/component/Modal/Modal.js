@@ -29,7 +29,7 @@ export default class Modal extends Component {
     return (
       <>
         {showModal ?
-          <div className='modal-background' >
+          <div className='modal-background'>
             <div className='modal-wrapper'>
               <img src='https://picsum.photos/id/1068/400/500' alt='hi :>' className='modal-img'></img>
               <div className='modal-content'>

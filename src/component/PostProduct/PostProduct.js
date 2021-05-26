@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from '../Button';
+import { catergories } from '../catergories'
 import './PostProduct.css';
 
 export default class PostProduct extends Component {
@@ -9,7 +10,7 @@ export default class PostProduct extends Component {
       productTitle: '',
       productDescription: '',
       productAuthor: '',
-      productCatergory: 'value',
+      productCatergory: catergories[0].name,
       productPdfFile: {},
       productJpegCoverFile: null,
       hasError: false
@@ -80,6 +81,7 @@ export default class PostProduct extends Component {
   }
 
   onProductCategoryChange = (event) => {
+    console.log(this.state.productCatergory)
     this.setState({
       productCatergory: event.target.value
     })
@@ -129,7 +131,7 @@ export default class PostProduct extends Component {
               className="post-product-form-select"
               onChange={this.onProductCategoryChange}
             >
-              <option value="hehexd">Value</option>
+              {catergories.map(catergory => <option value={catergory.name}>{catergory.name}</option>)}
             </select>
             <label
               className="post-product-form-label"

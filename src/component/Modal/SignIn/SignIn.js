@@ -45,7 +45,10 @@ export default class SignIn extends Component {
     }
     fetch("http://localhost:8888/api/users/login", options)
       .then(result => result.json())
-      .then(result => console.log(result))
+      .then(data => {
+        if (data.status === 'logged in')
+          this.props.handleOnclick()
+      })
       .catch(err => {
         console.log(err);
       })

@@ -16,6 +16,8 @@ export default class Home extends Component {
     }
   }
 
+
+
   getBook = () => {
     const queries = {
       page: this.state.currPage,
