@@ -10,13 +10,13 @@ export const MenuItems = [
     cName: 'nav-links'
   },
   {
-    title: "Products",
-    url: '#',
+    title: "History",
+    url: '/history',
     cName: 'nav-links'
   },
   {
     title: "Contact Us",
-    url: '#',
+    url: '/contact',
     cName: 'nav-links'
   },
 

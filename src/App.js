@@ -24,7 +24,7 @@ function App() {
       <Route exact path='/product' component={Product} />
       <Route exact path='/post' component={PostProduct} />
       <Route exact path='/history' component={UserHistory} />
-      <Route exact contact='/contact' component={Contacts} />
+      <Route exact path='/contact' component={Contacts} />
     </div>
   );
 }
